@@ -1,0 +1,792 @@
+/* iPad・スマホへの振り分け */
+
+/* 表示領域が1020px以上の場合に適用するスタイル（パソコン向け） */
+@media screen and (min-width: 1020px) {
+}	
+
+/* 表示領域が1019px以下の場合に適用するスタイル（スマホ向け） */
+@media screen and (max-width: 1019px) and (min-width: 551px) {
+}
+
+body {
+    font: normal normal normal 17px/17px Open Sans;
+    color:#000000;
+    overflow-x: hidden;
+}
+
+header, footer {
+    width:100%;
+}
+
+footer {
+    margin-top: 100px;
+}
+
+a {
+    color:#000000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: unset!important;
+}
+
+
+p {
+    margin-bottom: 0;
+}
+
+
+.header_margin {
+    margin-top:115px;
+}
+
+li {
+    list-style: none;
+}
+
+select {
+    background: #626262 0% 0% no-repeat padding-box;
+    color:#fff;
+    font: normal normal 600 20px/30px Open Sans;
+    height:50px;
+    padding-left: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(../img/select_bg.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 50px;
+}
+
+
+.none {
+    opacity: 0;
+    z-index:-1;
+}
+
+.header_logo {
+    margin:50px auto 100px;
+    display: block;
+}
+
+.footer_text {
+    width:500px;
+    margin: auto;
+    font: normal normal normal 20px/25px Hiragino Kaku Gothic Pro;
+}
+
+.footer_logo {
+    margin:50px auto;
+    display: block;
+}
+
+.content_name {
+    background: #E9E9E9 0% 0% no-repeat padding-box;
+    width:700px;
+    margin:50px auto 20px;
+    padding:10px 30px;
+    font: normal normal normal 25px/25px Hiragino Kaku Gothic Pro;
+}
+
+.require_mark {
+    font: normal normal normal 10px/10px Hiragino Kaku Gothic Pro;
+    color: #FF6A4B;
+}
+
+.btn_a {
+    width:700px;
+    margin:auto;
+    display: block;
+}
+
+.btn_green {
+    background: #74AF0D 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    font: normal normal normal 30px/30px Hiragino Kaku Gothic Pro;
+    color: #FFFFFF;
+    text-align: center;
+    padding:30px;
+}
+
+.btn_white {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    border: 1px solid #707070;
+    font: normal normal normal 30px/30px Hiragino Kaku Gothic Pro;
+    color: #000;
+    text-align: center;
+    padding:30px;
+}
+
+.form_column {
+    width:700px;
+    display: flex;
+    justify-content: space-between;
+    margin:20px auto;
+}
+
+.form_text {
+    width:480px;
+    border: 1px solid #707070;
+    background: #FFD9D9 0% 0% no-repeat padding-box;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.form_text:focus {
+    background: #fff;
+}
+
+.confirm_content {
+    width:480px;
+    font: normal normal normal 20px/20px Hiragino Kaku Gothic Pro;
+}
+
+.mail_complete_text {
+    font: normal normal normal 20px/25px Hiragino Kaku Gothic Pro;
+    margin:auto;
+    width:670px;
+}
+
+.content_div {
+    background: #F7F5EE 0% 0% no-repeat padding-box;
+    color:#000;
+}
+
+.content_div_black {
+    background-color: #000;
+}
+
+.content_div_bg {
+    background-image: url(../img/bg.jpg);
+    color:#fff;
+}
+
+.content_div_floor {
+    background-color: #A89F85;
+}
+
+.content_div_bg_sp {
+    height: 565px;
+    background-image: url(../img/bg_sp.jpg);
+    background-size: 100%;
+    color:#000;
+}
+
+.top_content {
+    background-image: url(../img/top_first_view.jpg);
+    height:660px;
+}
+
+.about_img {
+    margin:auto;
+    display: block;
+}
+
+.top_about_explain {
+    text-align: center;
+    font: normal normal normal 15px/20px Kozuka Mincho Pr6N;
+    letter-spacing: 1.8px;
+}
+
+.top_news_div {
+    width:1020px;
+    margin: auto;
+}
+
+.top_news_div_sp {
+    width:320px;
+    margin: auto;
+}
+
+.news_list_btn {
+    margin: auto;
+    display: block;
+}
+
+.top_secure {
+    font: normal normal normal 25px/20px Kozuka Mincho Pr6N;
+    text-align: center;
+    margin: 20px;
+}
+
+.top_secure_sp {
+    font: normal normal normal 18px/14px Kozuka Mincho Pr6N;
+    text-align: center;
+    margin: 20px;
+}
+
+.top_secure_orange {
+    font: normal normal normal 28px/50px Kozuka Mincho Pr6N;
+    color: #DBA57C;
+    text-align: center;
+}
+
+.top_secure_orange_sp {
+    font: normal normal normal 20px/36px Kozuka Mincho Pr6N;
+    color: #DBA57C;
+    text-align: center;
+}
+
+.top_border_sp {
+    margin: auto;
+    display: block;
+    width: 95%;
+}
+
+.detail_btn {
+    margin: auto;
+    display: block;
+}
+
+.detail_btn_sp {
+    margin: auto;
+    display: block;
+    padding:50px;
+}
+
+.padding_50 {
+    padding:50px;
+}
+
+.title_div {
+    padding:50px 0;
+    text-align: center;
+}
+
+.title_en {
+    font: normal normal normal 35px/20px Futura PT;
+    letter-spacing: 0.35px;
+    color: #DBA57C;
+    margin-bottom: 10px;
+}
+
+.cast_name_sp {
+    color: #DBA57C;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cast_name_1 {
+    font: normal normal normal 15px/38px Futura PT;
+    letter-spacing: 0.75px;
+}
+
+.cast_name_2 {
+    font: normal normal normal 30px/38px Futura PT;
+    letter-spacing: 1.5px;
+}
+
+.title_floor {
+    font: normal normal normal 35px/20px Futura PT;
+    letter-spacing: 0.35px;
+    color: #DBA57C;
+    height: 50px;
+    padding: 15px;
+    text-align:center;
+}
+
+.title_ja, .title_ja_black {
+    font: normal normal normal 12px/20px Kozuka Mincho Pr6N;
+}
+
+.floor_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:950px;
+    margin: 5px auto;
+}
+
+.floor_img {
+    width:600px;
+}
+
+.floor_text {
+    margin-left:80px;
+    width:270px;
+}
+
+.floor_text_main {
+    font: normal normal normal 18px/20px Futura PT;
+}
+
+.floor_text_sub {
+    font: normal normal normal 13px/20px Futura PT;
+    margin-top: 20px;
+}
+
+.price_ex1 {
+    margin-top: 40px;
+    text-align: center;
+    font: normal normal normal 18px/23px Kozuka Mincho Pr6N;
+    letter-spacing: 0.36px;
+}
+
+.price_ex2 {
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    width:420px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.price_ex3 {
+    text-align: center;
+    font: normal normal normal 13px/23px Kozuka Mincho Pr6N;
+    margin-top: 30px;
+}
+
+.price_ex4 {
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    width:400px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+.cast_list_ex {
+    margin-top:20px;
+    margin-bottom: 50px;
+    font: normal normal normal 16px/20px Kozuka Mincho Pr6N;
+    letter-spacing: 1.8px;
+    color: #FFFFFF;
+}
+
+.cast_list_div {
+    width:1020px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.cast_list_div_sp {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.cast_list_item {
+    width:150px;
+    margin:10px;
+}
+
+.cast_list_item_sp {
+    width: 29%;
+    margin: 2%;
+}
+
+.cast_list_img {
+    width:100%;
+    height:230px;
+}
+
+.cast_list_img_sp {
+    width:100%;
+}
+
+.cast_list_name {
+    font: normal normal normal 15px/20px Kozuka Mincho Pr6N;
+    margin-top: 5px;
+}
+
+.cast_list_name_sp {
+    font: normal normal normal 13px/15px Kozuka Mincho Pr6N;
+    margin-top: 5px;
+}
+
+.cast_list_item a {
+    color: #FFFFFF;
+}
+
+.cast_list_item a:hover {
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.profile_en {
+    font: normal normal normal 38px/30px Futura PT;
+    color: #DBA57C;
+    text-align: center;
+}
+
+.profile_ja {
+    font: normal normal normal 13px/30px Futura PT;
+    text-align: center;
+}
+
+.cast_img_div {
+    width: 1000px;
+    margin:auto;
+    padding-bottom: 100px;
+}
+
+.cast_img_main {
+    width:480px;
+    height:720px;
+    margin-right:15px;
+    display: inline-block;
+}
+
+.cast_img_main_sp {
+    width:100%;
+    padding:0 8px;
+}
+
+.cast_prof_en {
+    font: normal normal normal 30px/30px Futura PT;
+    color: #DBA57C;
+}
+
+.cast_prof_ja {
+    font: normal normal normal 13px/30px Futura PT;
+}
+
+.cast_img_list {
+    width:500px;
+    display: inline-block;
+}
+
+.cast_img_sub {
+    width:150px;
+    height:225px;
+    display: inline-block;
+}
+
+.cast_img_sub1, .cast_img_sub2, .cast_img_sub4, .cast_img_sub5, .cast_img_sub7, .cast_img_sub8 {
+    margin-right:15px;
+}
+
+.cast_img_sub1, .cast_img_sub2, .cast_img_sub3, .cast_img_sub4, .cast_img_sub5, .cast_img_sub6 {
+    margin-bottom:20px;
+}
+
+.news_div {
+    padding-bottom: 50px;
+    width:1000px;
+    margin:auto;
+}
+
+.news_div_sp {
+    padding: 30px;
+}
+
+.news_genre {
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    color: #DBA57C;
+}
+
+.news_date {
+    font: normal normal normal 11px/20px Kozuka Mincho Pr6N;
+}
+
+.news_title {
+    font: normal normal normal 20px/20px Kozuka Mincho Pr6N;
+    margin-bottom: 20px;
+}
+
+.news_title_sp {
+    font: normal normal normal 20px/20px Kozuka Mincho Pr6N;
+    margin: 5px 0 15px;
+}
+
+.news_img {
+    width:330px;
+    height:250px;
+    margin-right:30px;
+    display: inline-block;
+}
+
+.news_img_sp {
+    width:100%;
+}
+
+.news_text_short {
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news_text_short_sp {
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    margin-top: 10px;
+}
+
+.access_div {
+    width:1000px;
+    margin:auto;
+    padding-bottom: 100px;
+}
+
+.access_detail {
+    width:450px;
+    margin-right: 50px;
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+}
+
+.access_column {
+    padding:20px 50px;
+    border-top:1px solid #DBA57C;
+}
+
+.access_span {
+    width:200px;
+    display: inline-block;
+}
+
+.access_table, .price_table {
+    margin:auto;
+    border: 2px solid #DBA57C;
+    text-align: center;
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+}
+
+.access_table th, .access_table td {
+    border: 1px solid #DBA57C;
+    padding:30px 0;
+    width:250px;
+}
+
+.price_table th, .price_table td {
+    border: 2px solid #DBA57C;
+    padding:15px;
+    width:220px;
+}
+
+.access_table th, .price_table th {
+    background: #DBA57C 0% 0% no-repeat padding-box;
+}
+
+.price_table td {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    color:#000;
+}
+
+.cast_table, .access_table_sp {
+    margin: auto;
+    border: 1px solid #DBA57C;
+    font: normal normal normal 13px/20px Kozuka Mincho Pr6N;
+    color:#fff;
+}
+
+.cast_table td, .access_table_sp td {
+    border-bottom: 1px solid #DBA57C;
+    padding:15px;
+    width:220px;
+}
+
+
+.footer_sp {
+    background-image: url(../img/bg.jpg);
+}
+
+.footer_menu_sp ul {
+    padding:0;
+}
+
+.footer_menu_sp ul li {
+    border-bottom: solid 1px #DBA57C;
+    list-style: none;
+}
+
+.about_ex_sp {
+    font: normal normal bold 14px/30px Futura PT;
+    letter-spacing: 1.5px;
+    color: #000;
+    text-align: center;
+    padding: 150px 0;
+    text-shadow: rgb(255 255 255 / 70%) 1px 1px 15px, rgb(255 255 255 / 70%) -1px 1px 15px, rgb(255 255 255 / 70%) 1px -1px 15px, rgb(255 255 255 / 80%) -1px -1px 15px, rgb(255 255 255 / 80%) 2px 2px 15px, rgb(255 255 255 / 90%) -2px 2px 15px, rgb(255 255 255 / 90%) 2px -2px 15px, rgb(255 255 255 / 90%) -2px -2px 15px;
+}
+
+.floor_img_sp {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.floor_text_sp {
+    text-align: center;
+    padding: 20px 0 50px;
+}
+
+.price_ex1_sp {
+    margin-top: 40px;
+    text-align: center;
+    font: normal normal normal 13px/22px Kozuka Mincho Pr6N;
+}
+
+.price_ex2_sp {
+    text-align: center;
+    font: normal normal normal 15px/22px Kozuka Mincho Pr6N;
+}
+
+.price_ex3_sp {
+    margin-top: 40px;
+    padding:0 20px;
+    font: normal normal normal 11px/22px Kozuka Mincho Pr6N;
+}
+
+.price_ex4_sp {
+    margin-top: 30px;
+    text-align: center;
+    font: normal normal normal 12px/23px Kozuka Mincho Pr6N;
+}
+
+.price_ex5_sp {
+    margin-top: 10px;
+    padding:0 20px;
+    font: normal normal normal 11px/23px Kozuka Mincho Pr6N;
+}
+
+.access_title_sp {
+    font: normal normal normal 18px/36px Kozuka Mincho Pr6N;
+    letter-spacing: 0.9px;
+    color: #DBA57C;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/*以下ハンバーガーメニューについて*/
+
+.hamburger-menu {
+    margin-top: -40px;
+}
+.menu-btn {
+    position: absolute;
+    right: 13%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background: transparent linear-gradient(180deg, #262626 0%, #414141 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    margin-right: -10px;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 35px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 12px;
+}
+.menu-btn span:after {
+    top: 12px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+
+.menu-content {
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    height: 1000px;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-image: url(../img/bg.jpg);
+    transition: all 0.5s;/*アニメーション設定*/
+}
+
+.menu-content ul {
+    padding: 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #DBA57C;
+    list-style: none;
+}
+
+.menu_head_sp, .menu_content_sp {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    position: relative;
+}
+
+.menu_head_sp {
+    padding: 10px 15px 8px 0;
+}
+
+.menu_content_sp {
+    padding: 10px 15px 8px;
+}
+
+.sp_menu_en {
+    font-size: 16px;
+}
+
+.sp_menu_ja {
+    font-size: 13px;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0px;/*メニューを画面内へ*/
+}
+
+.current {
+    background: rgba(255,255,255,0.3);
+}
+
+#lightbox img {
+    position:relative;
+    z-index: 20;
+}
+
+.lb-prev {
+    left: -80px!important;
+    position: absolute;
+    opacity:1!important;
+}
+
+.lb-next {
+    right: -80px!important; 
+    position: absolute;
+    opacity:1!important;
+}
+
+.yazi {
+    margin-top: -13px;
+    float: right;
+}
