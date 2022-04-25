@@ -66,8 +66,8 @@
     </div>
     <div class="form_column">
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
-            <div style="width: 480px;">
-            {{ Form::text('postal', old('postal'), ['class' => 'postal_input', 'maxlength' => 10, 'placeholder' => '',
+            <div class="zip_div">
+            {{ Form::text('zip', old('zip'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
                 'onkeyup' => "AjaxZip3.zip2addr(this,'','address','address')"]) }}
             <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
             <div class="supplement">ハイフンなしで入力してください。</div>
@@ -106,14 +106,14 @@
     </div>
 
     <div class="content_name">ご連絡先情報</div>
-    <div class="contact_check_div" style="padding: 10px;">
-        <input type="checkbox" name="contact_diff" value="1" style="transform:scale(2.0);">
+    <div class="contact_check_div">
+        <input type="checkbox" name="contact_diff" value="1">
         <span class="contact_diff_span">ご連絡先</span>とご契約者様が<span class="contact_diff_span">異なる</span>場合チェックを入れてください。
         <div id="contact_diff_div">
             <div class="form_column">
                 <div class="form_name">郵便番号<span class="require_mark">※</span></div>
                 <div style="width: 480px;">
-                {{ Form::text('postal_diff', old('postal_diff'), ['class' => 'postal_input', 'maxlength' => 10, 'placeholder' => '',
+                {{ Form::text('zip_diff', old('zip_diff'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
                     'onkeyup' => "AjaxZip3.zip2addr(this,'','address_diff','address_diff')"]) }}
                 <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
                 <div class="supplement">ハイフンなしで入力してください。</div>
@@ -158,37 +158,37 @@
 
     <div class="content_name">お支払方法選択</div>
     <div class="content_radio">
-        <input type="radio" name="pay_type" value="クレジットカード" style="transform:scale(1.2);"> クレジットカード<br>
-        <input type="radio" name="pay_type" value="口座振替" style="transform:scale(1.2);"> 口座振替<br>
-        <input type="radio" name="pay_type" value="コンビニ決済（払込票）" style="transform:scale(1.2);"> コンビニ決済（払込票）<br>
+        <input type="radio" name="pay_type" value="クレジットカード"> クレジットカード<br>
+        <input type="radio" name="pay_type" value="口座振替"> 口座振替<br>
+        <input type="radio" name="pay_type" value="コンビニ決済（払込票）"> コンビニ決済（払込票）<br>
         <div class="pay_page_btn">GMO決済ページへ移動</div>
-        <div class="supplement">※当社サービスの決済はGMOペイメントを使用しています。</div>
+        <div class="supplement" style="width: 350px;">※当社サービスの決済はGMOペイメントを使用しています。</div>
 
     </div>
 
     <div class="content_name">各種約款に対する遵守事項</div>
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1" style="transform:scale(2.0);">
+            <input type="checkbox" name="compli" value="1">
             <span>契約締結前交付書面を確認の上、内容について承諾します。</span>
         </div>
-        <div class="supplement" style="margin-left: 42px;"><a href="">契約締結前交付書面</a>をご覧ください。</div>
+        <div class="supplement compli_ml"><a href="">契約締結前交付書面</a>をご覧ください。</div>
     </div>
 
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1" style="transform:scale(2.0);">
-            <span>低圧電気供給約款を確認の上、</span><br><span style="margin-left:33px;">本規約を電気需給契約の内容とすることについて承諾します。</span>
+            <input type="checkbox" name="compli" value="1">
+            <span>低圧電気供給約款を確認の上、</span><br><span class="compli_span">本規約を電気需給契約の内容とすることについて承諾します。</span>
         </div>
-        <div class="supplement" style="margin-left: 42px;">低圧電気需給約款をご覧ください。<br>個別利用規約をご覧ください。</div>
+        <div class="supplement compli_ml">低圧電気需給約款をご覧ください。<br>個別利用規約をご覧ください。</div>
     </div>
 
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1" style="transform:scale(2.0);">
+            <input type="checkbox" name="compli" value="1">
             <span>個人情報の取り扱いについて承諾します。</span>
         </div>
-        <div class="supplement" style="margin-left: 42px;"><a href="">個人情報保護方針について</a>をご覧ください。</div>
+        <div class="supplement compli_ml"><a href="">個人情報保護方針について</a>をご覧ください。</div>
     </div>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </form>

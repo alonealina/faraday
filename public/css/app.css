@@ -121,6 +121,10 @@ select {
     padding-left: 10px;
 }
 
+.zip_div {
+    width: 480px;
+}
+
 .form_text:focus {
     background: #fff;
 }
@@ -188,11 +192,13 @@ select {
 input[type=radio] {
     margin-top:10px;
     margin-right:5px;
+    transform:scale(1.2);
 }
 
 input[type=checkbox] {
     margin-right:15px;
     accent-color: #FF6A4B;
+    transform:scale(2.0);
 }
 
 input[type="checkbox"]:checked+label::after{
@@ -209,6 +215,10 @@ input[type="checkbox"]:checked+label::after{
     border-bottom: 3px solid;
     border-left: 3px solid;
     border-color:  #fff;
+}
+
+.contact_check_div {
+    padding: 10px;
 }
 
 .contact_check_div > input[type="checkbox"]:not(:checked) ~ #contact_diff_div {
@@ -237,6 +247,14 @@ textarea {
     margin-top: 20px;
 }
 
+.compli_span {
+    margin-left:33px;
+}
+
+.compli_ml {
+    margin-left: 42px;
+}
+
 .pay_page_btn {
     width: 217px;
     height: 40px;
@@ -251,7 +269,7 @@ textarea {
     color: #FF6A4B;
 }
 
-.postal_input {
+.zip_input {
     width:150px;
     border: 1px solid #707070;
     background: #FFD9D9 0% 0% no-repeat padding-box;
@@ -327,7 +345,7 @@ textarea {
         font-size: 12px;
     }
 
-    .postal_input {
+    .zip_input {
         width: 75px;
         height: 25px;
         font-size: 12px;
@@ -364,6 +382,87 @@ textarea {
     .supplement {
         font: normal normal normal 10px/11px Hiragino Kaku Gothic Pro;
         width:235px;
+    }
+
+    .begin_text {
+        font: normal normal normal 12px/15px Hiragino Kaku Gothic Pro;
+        color: #707070;
+    }
+
+    .check_column {
+        width: 350px;
+        margin: 25px auto;
+    }
+
+    .check_text {
+        margin-top: 2px;
+    }
+
+    .zip_div {
+        width: 235px;
+    }
+    
+    .tel_select {
+        width: 75px;
+    }
+
+    .tel_text {
+        width: 45px;
+        height:25px;
+        font-size: 12px;
+    }
+
+    .tel_column {
+        width: 235px;
+    }
+
+    .content_textarea {
+        width: 320px;
+    }
+
+    input[type=checkbox] {
+        margin-right: 5px;
+        transform:scale(1.2);
+    }
+
+    .contact_check_div {
+        font-size: 11px;
+        padding:0px;
+    }
+
+    .content_radio {
+        font-size: 12px;
+    }
+
+    input[type=radio] {
+        margin-top: 5px;
+        transform:scale(1.0);
+    }
+    
+    .pay_page_btn {
+        width: 150px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 10px;
+    }
+
+    .compli_div {
+        padding: 5px;
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    .compli_span {
+        margin-left:21px;
+    }
+    
+    .compli_ml {
+        margin-left: 25px;
+    }
+
+    .form_confirm {
+        width: 225px;
+        font-size: 12px;
     }
 }
 

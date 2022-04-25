@@ -31,7 +31,7 @@
     </div>
     <div class="form_column">
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $postal }}</div>
+        <div class="form_confirm">{{ $zip }}</div>
     </div>
     <div class="form_column">
         <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
@@ -64,7 +64,7 @@
     <div class="content_name">ご連絡先情報</div>
     <div class="form_column">
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $postal_diff }}</div>
+        <div class="form_confirm">{{ $zip_diff }}</div>
     </div>
     <div class="form_column">
         <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
