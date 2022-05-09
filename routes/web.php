@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('regist_form', 'App\Http\Controllers\FaradayController@regist_form')->name('regist_form');
+Route::get('/', 'App\Http\Controllers\FaradayController@regist_form')->name('regist_form');
 
 Route::get('regist_complete', 'App\Http\Controllers\FaradayController@regist_complete')->name('regist_complete');
 Route::post('regist_confirm', 'App\Http\Controllers\FaradayController@regist_confirm')->name('regist_confirm');

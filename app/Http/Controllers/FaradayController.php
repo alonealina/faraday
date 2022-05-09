@@ -51,12 +51,6 @@ class FaradayController extends Controller
             'tel3_diff' => $request['tel3_diff'],
             'textarea' => $request['textarea'],
             'pay_type' => $request['pay_type'],
-            'tel3_diff' => $request['tel3_diff'],
-            'tel3_diff' => $request['tel3_diff'],
-            'tel3_diff' => $request['tel3_diff'],
-            'tel3_diff' => $request['tel3_diff'],
-            'tel3_diff' => $request['tel3_diff'],
-            'tel3_diff' => $request['tel3_diff'],
         ]);
     }
 
