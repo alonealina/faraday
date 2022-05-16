@@ -34,8 +34,20 @@
         <div class="form_confirm">{{ $zip }}</div>
     </div>
     <div class="form_column">
-        <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $address }}</div>
+        <div class="form_name">都道府県<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $pref_name }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">市区郡名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $city_name }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">町名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $town_name }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $add_name }}</div>
     </div>
     <div class="form_column">
         <div class="form_name">建物名など<span class="require_mark">※</span></div>
@@ -67,20 +79,23 @@
         <div class="form_confirm">{{ $zip_diff }}</div>
     </div>
     <div class="form_column">
-        <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $address_diff }}</div>
+        <div class="form_name">都道府県<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $pref_name2 }}</div>
     </div>
     <div class="form_column">
+        <div class="form_name">市区郡名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $city_name2 }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">町名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $town_name2 }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $add_name2 }}</div>
+    </div>    <div class="form_column">
         <div class="form_name">建物名など<span class="require_mark">※</span></div>
         <div class="form_confirm">{{ $building_diff }}</div>
-    </div>
-    <div class="form_column">
-        <div class="form_name">お名前<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $name_diff }}</div>
-    </div>
-    <div class="form_column">
-        <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $name_kana_diff }}</div>
     </div>
     <div class="form_column">
         <div class="form_name">電話番号<span class="require_mark">※</span></div>
@@ -102,8 +117,11 @@
     </div>
 </form>
 
+<a href="#" onclick="history.back(-1);return false;" class="btn_a">
+    <div class="btn_green" style="margin-top:50px;">戻る</div>
+</a>
 <a href="#" onclick="clickFormButton()" class="btn_a">
-    <div class="btn_green" style="margin-top:50px;">確認画面へ</div>
+    <div class="btn_green" style="margin-top:50px;">内容を確認し完了</div>
 </a>
 
 @endsection

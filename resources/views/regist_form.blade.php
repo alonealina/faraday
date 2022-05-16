@@ -68,14 +68,26 @@
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
             <div class="zip_div">
             {{ Form::text('zip', old('zip'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
-                'onkeyup' => "AjaxZip3.zip2addr(this,'','address','address')"]) }}
+                'onkeyup' => "AjaxZip3.zip2addr(this,'','pref_name','city_name','town_name','add_name')"]) }}
             <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
             <div class="supplement">ハイフンなしで入力してください。</div>
         </div>
     </div>
     <div class="form_column">
-        <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
-        {{ Form::text('address', old('address'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）大阪府大阪市北区１－２－３']) }}
+        <div class="form_name">都道府県<span class="require_mark">※</span></div>
+        {{ Form::text('pref_name', old('pref_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+    </div>
+    <div class="form_column">
+        <div class="form_name">市区郡名<span class="require_mark">※</span></div>
+        {{ Form::text('city_name', old('city_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+    </div>
+    <div class="form_column">
+        <div class="form_name">町名<span class="require_mark">※</span></div>
+        {{ Form::text('town_name', old('town_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+    </div>
+    <div class="form_column">
+        <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
+        {{ Form::text('add_name', old('add_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
     </div>
     <div class="form_column">
         <div class="form_name">建物名など<span class="require_mark">※</span></div>
@@ -92,9 +104,6 @@
     <div class="form_column">
         <div class="form_name">電話番号<span class="require_mark">※</span></div>
         <div class="tel_column">
-            <select name="tel_select" class="tel_select">
-                <option value="a">選択</option>
-            </select>
             {{ Form::text('tel1', old('tel1'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
             {{ Form::text('tel2', old('tel2'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
             {{ Form::text('tel3', old('tel3'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
@@ -114,34 +123,35 @@
                 <div class="form_name">郵便番号<span class="require_mark">※</span></div>
                 <div style="width: 480px;">
                 {{ Form::text('zip_diff', old('zip_diff'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
-                    'onkeyup' => "AjaxZip3.zip2addr(this,'','address_diff','address_diff')"]) }}
+                    'onkeyup' => "AjaxZip3.zip2addr(this,'','pref_name2','city_name2','town_name2','add_name2')"]) }}
                 <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
                 <div class="supplement">ハイフンなしで入力してください。</div>
 
                 </div>
             </div>
             <div class="form_column">
-                <div class="form_name">都道府県・<br>市区町村・番地<span class="require_mark">※</span></div>
-                {{ Form::text('address_diff', old('address_diff'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）大阪府大阪市北区１－２－３']) }}
+                <div class="form_name">都道府県<span class="require_mark">※</span></div>
+                {{ Form::text('pref_name2', old('pref_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+            </div>
+            <div class="form_column">
+                <div class="form_name">市区郡名<span class="require_mark">※</span></div>
+                {{ Form::text('city_name2', old('city_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+            </div>
+            <div class="form_column">
+                <div class="form_name">町名<span class="require_mark">※</span></div>
+                {{ Form::text('town_name2', old('town_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+            </div>
+            <div class="form_column">
+                <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
+                {{ Form::text('add_name2', old('add_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
             </div>
             <div class="form_column">
                 <div class="form_name">建物名など<span class="require_mark">※</span></div>
-                {{ Form::text('building_diff', old('building_diff'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
-            </div>
-            <div class="form_column">
-                <div class="form_name">お名前<span class="require_mark">※</span></div>
-                {{ Form::text('name_diff', old('name_diff'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）山田太郎']) }}
-            </div>
-            <div class="form_column">
-                <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
-                {{ Form::text('name_kana_diff', old('name_kana_diff'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）ヤマダタロウ']) }}
+                {{ Form::text('building', old('building'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
             </div>
             <div class="form_column">
                 <div class="form_name">電話番号<span class="require_mark">※</span></div>
                 <div class="tel_column">
-                    <select name="tel_select_diff" class="tel_select">
-                        <option value="a">選択</option>
-                    </select>
                     {{ Form::text('tel1_diff', old('tel1_diff'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
                     {{ Form::text('tel2_diff', old('tel2_diff'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
                     {{ Form::text('tel3_diff', old('tel3_diff'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}

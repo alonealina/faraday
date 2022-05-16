@@ -279,8 +279,6 @@ textarea {
 
 .tel_column {
     width:480px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .tel_select {
@@ -293,6 +291,7 @@ textarea {
     background: #FFD9D9 0% 0% no-repeat padding-box;
     height: 40px;
     padding-left: 10px;
+    margin-right: 10px;
 }
 
 .form_confirm {
