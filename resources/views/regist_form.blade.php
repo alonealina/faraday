@@ -6,7 +6,7 @@
 
 <div class="content_name">お申し込みの前に</div>
 <div class="regist_explain">
-    <a href="">特定商取引法に基づく表記</a>についてをご覧ください。<br>
+    <a href="{{ asset('pdf/law.pdf') }}" target="_blank">特定商取引法に基づく表記</a>についてをご覧ください。<br>
     お申込みの前に、あらかじめ下記の書類をお手元にご準備ください。<br>
     なお、お引越しの場合で転居先の供給地点特定番号が不明な場合はお問い合わせください。
 </div>
@@ -182,7 +182,7 @@
             <input type="checkbox" name="compli" value="1">
             <span>契約締結前交付書面を確認の上、内容について承諾します。</span>
         </div>
-        <div class="supplement compli_ml"><a href="">契約締結前交付書面</a>をご覧ください。</div>
+        <div class="supplement compli_ml"><a href="{{ asset('pdf/contract.pdf') }}" target="_blank">契約締結前交付書面</a>をご覧ください。</div>
     </div>
 
     <div class="content_compli">
@@ -198,7 +198,7 @@
             <input type="checkbox" name="compli" value="1">
             <span>個人情報の取り扱いについて承諾します。</span>
         </div>
-        <div class="supplement compli_ml"><a href="">個人情報保護方針について</a>をご覧ください。</div>
+        <div class="supplement compli_ml"><a href="{{ asset('pdf/policy.pdf') }}" target="_blank">個人情報保護方針について</a>をご覧ください。</div>
     </div>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </form>
