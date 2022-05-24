@@ -60,8 +60,15 @@
     <div class="form_column">
         <div class="form_name">供給地点特定番号<span class="require_mark">※</span></div>
         <div>
-        {{ Form::text('number_s', old('number_s'), ['class' => 'form_text', 'maxlength' => 22, 'placeholder' => '']) }}
-        <div class="supplement">他社よりお乗り換えの場合は検針票に記載のある22桁の番号を入力してください。<br>お引越しの場合は転居先の供給地点特定番号を入力してください。</div>
+            <div class="number_s_column">
+                {{ Form::text('number_s1', old('number_s1'), ['class' => 'number_text2', 'maxlength' => 2, 'onkeyup' => 'nextfeild(this)']) }}
+                {{ Form::text('number_s2', old('number_s2'), ['class' => 'number_text4', 'maxlength' => 4, 'onkeyup' => 'nextfeild(this)']) }}
+                {{ Form::text('number_s3', old('number_s3'), ['class' => 'number_text4', 'maxlength' => 4, 'onkeyup' => 'nextfeild(this)']) }}
+                {{ Form::text('number_s4', old('number_s4'), ['class' => 'number_text4', 'maxlength' => 4, 'onkeyup' => 'nextfeild(this)']) }}
+                {{ Form::text('number_s5', old('number_s5'), ['class' => 'number_text4', 'maxlength' => 4, 'onkeyup' => 'nextfeild(this)']) }}
+                {{ Form::text('number_s6', old('number_s6'), ['class' => 'number_text4', 'maxlength' => 4, 'onkeyup' => 'nextfeild(this)']) }}
+            </div>
+            <div class="supplement">他社よりお乗り換えの場合は検針票に記載のある22桁の番号を入力してください。<br>お引越しの場合は転居先の供給地点特定番号を入力してください。</div>
         </div>
     </div>
     <div class="form_column">
@@ -93,14 +100,42 @@
         <div class="form_name">建物名など<span class="require_mark">※</span></div>
         {{ Form::text('building', old('building'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
     </div>
-    <div class="form_column">
-        <div class="form_name">お名前<span class="require_mark">※</span></div>
-        {{ Form::text('name', old('name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）山田太郎']) }}
+
+    <div class="content_radio">
+        <input type="radio" name="name_type" value="個人" id="Individual" checked> 個人<br>
+        <input type="radio" name="name_type" value="法人" id="Corporate"> 法人<br>
     </div>
-    <div class="form_column">
-        <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
-        {{ Form::text('name_kana', old('name_kana'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）ヤマダタロウ']) }}
+
+    <div id="individual_div">
+        <div class="form_column">
+            <div class="form_name">お名前<span class="require_mark">※</span></div>
+            {{ Form::text('name', old('name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）山田太郎']) }}
+        </div>
+        <div class="form_column">
+            <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
+            {{ Form::text('name_kana', old('name_kana'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）ヤマダタロウ']) }}
+        </div>
     </div>
+
+    <div id="corporate_div" hidden>
+        <div class="form_column">
+            <div class="form_name">法人名<span class="require_mark">※</span></div>
+            {{ Form::text('name_cp', old('name_cp'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）株式会社ファラデー']) }}
+        </div>
+        <div class="form_column">
+            <div class="form_name">法人名（カナ）<span class="require_mark">※</span></div>
+            {{ Form::text('name_kana_cp', old('name_kana_cp'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）カブシキガイシャファラデー']) }}
+        </div>
+        <div class="form_column">
+            <div class="form_name">ご担当者様部署<span class="require_mark">※</span></div>
+            {{ Form::text('charge_depart', old('charge_depart'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+        </div>
+        <div class="form_column">
+            <div class="form_name">ご担当者様名<span class="require_mark">※</span></div>
+            {{ Form::text('charge_name', old('charge_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
+        </div>
+    </div>
+
     <div class="form_column">
         <div class="form_name">電話番号<span class="require_mark">※</span></div>
         <div class="tel_column">
@@ -173,7 +208,6 @@
         <input type="radio" name="pay_type" value="コンビニ決済（払込票）"> コンビニ決済（払込票）<br>
         <div class="pay_page_btn">GMO決済ページへ移動</div>
         <div class="supplement" style="width: 350px;">※当社サービスの決済はGMOペイメントを使用しています。</div>
-
     </div>
 
     <div class="content_name">各種約款に対する遵守事項</div>

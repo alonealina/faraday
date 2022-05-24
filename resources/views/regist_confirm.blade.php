@@ -27,7 +27,7 @@
     <div class="content_name">ご契約者様情報</div>
     <div class="form_column">
         <div class="form_name">供給地点特定番号<span class="require_mark">※</span></div>
-        <div class="form_confirm">{{ $number_s }}</div>
+        <div class="form_confirm">{{ $number_s1 }}-{{ $number_s2 }}-{{ $number_s3 }}-{{ $number_s4 }}-{{ $number_s5 }}-{{ $number_s6 }}</div>
     </div>
     <div class="form_column">
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
@@ -53,6 +53,8 @@
         <div class="form_name">建物名など<span class="require_mark">※</span></div>
         <div class="form_confirm">{{ $building }}</div>
     </div>
+
+    @if($name_type == '個人')
     <div class="form_column">
         <div class="form_name">お名前<span class="require_mark">※</span></div>
         <div class="form_confirm">{{ $name }}</div>
@@ -61,6 +63,26 @@
         <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
         <div class="form_confirm">{{ $name_kana }}</div>
     </div>
+    @else
+    <div class="form_column">
+        <div class="form_name">法人名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $name_cp }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">法人名（カナ）<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $name_kana_cp }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">ご担当者様部署<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $charge_depart }}</div>
+    </div>
+    <div class="form_column">
+        <div class="form_name">ご担当者様名<span class="require_mark">※</span></div>
+        <div class="form_confirm">{{ $charge_name }}</div>
+    </div>
+    @endif
+
+
     <div class="form_column">
         <div class="form_name">電話番号<span class="require_mark">※</span></div>
         <div class="tel_column">

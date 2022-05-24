@@ -230,6 +230,15 @@ input[type="checkbox"]:checked+label::after{
     display:block;
 }
 
+.contact_check_div > input[type="checkbox"]:not(:checked) ~ #contact_diff_div {
+    height: 0px;
+    overflow: hidden;
+}
+
+.contact_check_div > input[type="checkbox"]:checked ~ #contact_diff_div {
+    display:block;
+}
+
     
 .content_textarea {
     width:450px;
@@ -293,6 +302,29 @@ textarea {
     padding-left: 10px;
     margin-right: 10px;
 }
+
+.number_s_column {
+    width:480px;
+}
+
+.number_text2 {
+    width:40px;
+    border: 1px solid #707070;
+    background: #FFD9D9 0% 0% no-repeat padding-box;
+    height: 40px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.number_text4 {
+    width:70px;
+    border: 1px solid #707070;
+    background: #FFD9D9 0% 0% no-repeat padding-box;
+    height: 40px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
 
 .form_confirm {
     width: 480px;
