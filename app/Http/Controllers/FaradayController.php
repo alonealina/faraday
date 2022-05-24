@@ -23,6 +23,50 @@ class FaradayController extends Controller
 
     public function regist_confirm(Request $request)
     {
+        $rules = [
+            'number_c' => 'required',
+            'number_s1' => 'required',
+            'number_s2' => 'required',
+            'number_s3' => 'required',
+            'number_s4' => 'required',
+            'number_s5' => 'required',
+            'number_s6' => 'required',
+            'zip' => 'required',
+            'pref_name' => 'required',
+            'city_name' => 'required',
+            'town_name' => 'required',
+            'add_name' => 'required',
+            'name' => 'required',
+            'name_kana' => 'required',
+            'tel1' => 'required',
+            'tel2' => 'required',
+            'tel3' => 'required',
+            'mail' => 'required',
+        ];
+
+        $messages = [
+            'number_c.required' => '契約番号を入力してください',
+            'number_s1.required' => '供給地点特定番号を入力してください',
+            'number_s2.required' => '供給地点特定番号を入力してください',
+            'number_s3.required' => '供給地点特定番号を入力してください',
+            'number_s4.required' => '供給地点特定番号を入力してください',
+            'number_s5.required' => '供給地点特定番号を入力してください',
+            'number_s6.required' => '供給地点特定番号を入力してください',
+            'zip.required' => '郵便番号を入力してください',
+            'pref_name.required' => '都道府県を入力してください',
+            'city_name.required' => '市区郡名を入力してください',
+            'town_name.required' => '町名を入力してください',
+            'add_name.required' => '丁目・番地を入力してください',
+            'name.required' => 'お名前を入力してください',
+            'name_kana.required' => 'お名前（カナ）を入力してください',
+            'tel1.required' => '電話番号を入力してください',
+            'tel2.required' => '電話番号を入力してください',
+            'tel3.required' => '電話番号を入力してください',
+            'mail.required' => 'メールアドレスを入力してください',
+        ];
+
+        Validator::make($request->all(), $rules, $messages)->validate();
+
         return view('regist_confirm', [
             'number_c' => $request['number_c'],
             'current_company' => $request['current_company'],

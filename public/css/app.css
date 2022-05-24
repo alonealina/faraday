@@ -86,6 +86,7 @@ select {
     width:700px;
     margin:auto;
     display: block;
+    cursor: pointer;
 }
 
 .btn_green {
@@ -119,6 +120,10 @@ select {
     background: #FFD9D9 0% 0% no-repeat padding-box;
     height: 40px;
     padding-left: 10px;
+}
+
+.error {
+    color: red;
 }
 
 .zip_div {

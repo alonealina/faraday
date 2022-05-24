@@ -1,12 +1,9 @@
 function clickFormButton() {
+  check1 = document.faraday_form.Check1.checked;
+  check2 = document.faraday_form.Check2.checked;
+  check3 = document.faraday_form.Check3.checked;
+  if (check1 && check2 && check3) {
     document.forms.faraday_form.submit();
-}
-function valueChange(event){
-  Type = event.currentTarget.value;
-  if (Type == '個人') {
-    document.getElementById('individual_div').show();
-  } else {
-    document.getElementById('individual_div').hidden();
   }
 }
 
@@ -27,12 +24,12 @@ Radio2.addEventListener("click", function () {
 
 function nextfeild(str) {
   if (str.value.length >= str.maxLength) {
-      for (var i = 0, elm = str.form.elements; i < elm.length; i++) {
-          if (elm[i] == str) {
-              (elm[i + 1] || elm[0]).focus();
-              break;
-          }
+    for (var i = 0, elm = str.form.elements; i < elm.length; i++) {
+      if (elm[i] == str) {
+        (elm[i + 1] || elm[0]).focus();
+        break;
       }
+    }
   }
   return (str);
 }

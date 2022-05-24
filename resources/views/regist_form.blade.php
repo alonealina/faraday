@@ -24,6 +24,9 @@
 <form id="form" class="" name="faraday_form" action="{{ route('regist_confirm') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="content_name">現在の申込種別</div>
+    @if($errors->has('number_c'))
+    <div class="error">{{ $errors->first('number_c') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">現在の契約番号<span class="require_mark">※</span></div>
         <div>
@@ -57,6 +60,19 @@
     </div>
 
     <div class="content_name">ご契約者様情報</div>
+    @if($errors->has('number_s1'))
+    <div class="error">{{ $errors->first('number_s1') }}</div>
+    @elseif($errors->has('number_s2'))
+    <div class="error">{{ $errors->first('number_s2') }}</div>
+    @elseif($errors->has('number_s3'))
+    <div class="error">{{ $errors->first('number_s3') }}</div>
+    @elseif($errors->has('number_s4'))
+    <div class="error">{{ $errors->first('number_s4') }}</div>
+    @elseif($errors->has('number_s5'))
+    <div class="error">{{ $errors->first('number_s5') }}</div>
+    @elseif($errors->has('number_s6'))
+    <div class="error">{{ $errors->first('number_s6') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">供給地点特定番号<span class="require_mark">※</span></div>
         <div>
@@ -71,6 +87,10 @@
             <div class="supplement">他社よりお乗り換えの場合は検針票に記載のある22桁の番号を入力してください。<br>お引越しの場合は転居先の供給地点特定番号を入力してください。</div>
         </div>
     </div>
+
+    @if($errors->has('zip'))
+    <div class="error">{{ $errors->first('zip') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">郵便番号<span class="require_mark">※</span></div>
             <div class="zip_div">
@@ -80,24 +100,36 @@
             <div class="supplement">ハイフンなしで入力してください。</div>
         </div>
     </div>
+    @if($errors->has('pref_name'))
+    <div class="error">{{ $errors->first('pref_name') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">都道府県<span class="require_mark">※</span></div>
         {{ Form::text('pref_name', old('pref_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
     </div>
+    @if($errors->has('city_name'))
+    <div class="error">{{ $errors->first('city_name') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">市区郡名<span class="require_mark">※</span></div>
         {{ Form::text('city_name', old('city_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
     </div>
+    @if($errors->has('town_name'))
+    <div class="error">{{ $errors->first('town_name') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">町名<span class="require_mark">※</span></div>
         {{ Form::text('town_name', old('town_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
     </div>
+    @if($errors->has('add_name'))
+    <div class="error">{{ $errors->first('add_name') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
         {{ Form::text('add_name', old('add_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
     </div>
     <div class="form_column">
-        <div class="form_name">建物名など<span class="require_mark">※</span></div>
+        <div class="form_name">建物名など</div>
         {{ Form::text('building', old('building'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
     </div>
 
@@ -107,10 +139,16 @@
     </div>
 
     <div id="individual_div">
+        @if($errors->has('name'))
+        <div class="error">{{ $errors->first('name') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">お名前<span class="require_mark">※</span></div>
             {{ Form::text('name', old('name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）山田太郎']) }}
         </div>
+        @if($errors->has('name_kana'))
+        <div class="error">{{ $errors->first('name_kana') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">お名前（カナ）<span class="require_mark">※</span></div>
             {{ Form::text('name_kana', old('name_kana'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）ヤマダタロウ']) }}
@@ -136,6 +174,13 @@
         </div>
     </div>
 
+    @if($errors->has('tel1'))
+    <div class="error">{{ $errors->first('tel1') }}</div>
+    @elseif($errors->has('tel2'))
+    <div class="error">{{ $errors->first('tel2') }}</div>
+    @elseif($errors->has('tel3'))
+    <div class="error">{{ $errors->first('tel3') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">電話番号<span class="require_mark">※</span></div>
         <div class="tel_column">
@@ -144,6 +189,9 @@
             {{ Form::text('tel3', old('tel3'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
         </div>
     </div>
+    @if($errors->has('name_kana'))
+    <div class="error">{{ $errors->first('mail') }}</div>
+    @endif
     <div class="form_column">
         <div class="form_name">メールアドレス<span class="require_mark">※</span></div>
         {{ Form::text('mail', old('mail'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）xxxxx@xxxxx.co.jp']) }}
@@ -213,7 +261,7 @@
     <div class="content_name">各種約款に対する遵守事項</div>
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1">
+            <input type="checkbox" id="Check1" value="1">
             <span>契約締結前交付書面を確認の上、内容について承諾します。</span>
         </div>
         <div class="supplement compli_ml"><a href="{{ asset('pdf/contract.pdf') }}" target="_blank">契約締結前交付書面</a>をご覧ください。</div>
@@ -221,7 +269,7 @@
 
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1">
+            <input type="checkbox" id="Check2" value="1">
             <span>低圧電気供給約款を確認の上、</span><br><span class="compli_span">本規約を電気需給契約の内容とすることについて承諾します。</span>
         </div>
         <div class="supplement compli_ml">低圧電気需給約款をご覧ください。<br>個別利用規約をご覧ください。</div>
@@ -229,7 +277,7 @@
 
     <div class="content_compli">
         <div class="compli_div">
-            <input type="checkbox" name="compli" value="1">
+            <input type="checkbox" id="Check3" value="1">
             <span>個人情報の取り扱いについて承諾します。</span>
         </div>
         <div class="supplement compli_ml"><a href="{{ asset('pdf/policy.pdf') }}" target="_blank">個人情報保護方針について</a>をご覧ください。</div>
@@ -237,7 +285,7 @@
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </form>
 
-<a href="#" onclick="clickFormButton()" class="btn_a">
+<a onclick="clickFormButton()" class="btn_a">
     <div class="btn_green" style="margin-top:50px;">確認画面へ</div>
 </a>
 @endsection
