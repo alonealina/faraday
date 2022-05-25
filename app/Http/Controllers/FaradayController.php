@@ -36,13 +36,23 @@ class FaradayController extends Controller
             'city_name' => 'required',
             'town_name' => 'required',
             'add_name' => 'required',
-            'name' => 'required',
-            'name_kana' => 'required',
             'tel1' => 'required',
             'tel2' => 'required',
             'tel3' => 'required',
             'mail' => 'required',
+            'pay_type' => 'required',
         ];
+
+        if ($request['name_type'] == '個人') {
+            $rules = array_merge($rules,array('name'=>'required', 'name_kana'=>'required'));
+        } else {
+            $rules = array_merge($rules,array('name_cp'=>'required', 'name_kana_cp'=>'required', 'charge_depart'=>'required', 'charge_name'=>'required'));
+        }
+
+        if ($request['contact_diff']) {
+            $rules = array_merge($rules,array('zip_diff'=>'required', 'pref_name2'=>'required', 'city_name2'=>'required', 'town_name2'=>'required',
+                'add_name2'=>'required', 'tel1_diff'=>'required', 'tel2_diff'=>'required', 'tel3_diff'=>'required'));
+        }
 
         $messages = [
             'number_c.required' => '契約番号を入力してください',
@@ -59,10 +69,23 @@ class FaradayController extends Controller
             'add_name.required' => '丁目・番地を入力してください',
             'name.required' => 'お名前を入力してください',
             'name_kana.required' => 'お名前（カナ）を入力してください',
+            'name_cp.required' => '法人名を入力してください',
+            'name_kana_cp.required' => '法人名（カナ）を入力してください',
+            'charge_depart.required' => 'ご担当者様部署を入力してください',
+            'charge_name.required' => 'ご担当者様名を入力してください',
             'tel1.required' => '電話番号を入力してください',
             'tel2.required' => '電話番号を入力してください',
             'tel3.required' => '電話番号を入力してください',
             'mail.required' => 'メールアドレスを入力してください',
+            'zip_diff.required' => '郵便番号を入力してください',
+            'pref_name2.required' => '都道府県を入力してください',
+            'city_name2.required' => '市区郡名を入力してください',
+            'town_name2.required' => '町名を入力してください',
+            'add_name2.required' => '丁目・番地を入力してください',
+            'tel1_diff.required' => '電話番号を入力してください',
+            'tel2_diff.required' => '電話番号を入力してください',
+            'tel3_diff.required' => '電話番号を入力してください',
+            'pay_type.required' => 'お支払方法を選択してください',
         ];
 
         Validator::make($request->all(), $rules, $messages)->validate();
@@ -91,7 +114,6 @@ class FaradayController extends Controller
             'name_kana_cp' => $request['name_kana_cp'],
             'charge_depart' => $request['charge_depart'],
             'charge_name' => $request['charge_name'],
-            'tel_select' => $request['tel_select'],
             'tel1' => $request['tel1'],
             'tel2' => $request['tel2'],
             'tel3' => $request['tel3'],
@@ -102,8 +124,7 @@ class FaradayController extends Controller
             'city_name2' => $request['city_name2'],
             'town_name2' => $request['town_name2'],
             'add_name2' => $request['add_name2'],
-            'building_diff' => $request['building_diff'],
-            'tel_select_diff' => $request['tel_select_diff'],
+            'building2' => $request['building2'],
             'tel1_diff' => $request['tel1_diff'],
             'tel2_diff' => $request['tel2_diff'],
             'tel3_diff' => $request['tel3_diff'],

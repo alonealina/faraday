@@ -233,6 +233,7 @@ input[type="checkbox"]:checked+label::after{
 
 .contact_check_div > input[type="checkbox"]:checked ~ #contact_diff_div {
     display:block;
+    margin-top:20px;
 }
 
 .contact_check_div > input[type="checkbox"]:not(:checked) ~ #contact_diff_div {

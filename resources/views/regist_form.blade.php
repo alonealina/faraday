@@ -133,12 +133,12 @@
         {{ Form::text('building', old('building'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
     </div>
 
-    <div class="content_radio">
-        <input type="radio" name="name_type" value="個人" id="Individual" checked> 個人<br>
-        <input type="radio" name="name_type" value="法人" id="Corporate"> 法人<br>
+    <div class="content_radio" style="margin-bottom:20px;">
+        <input type="radio" name="name_type" value="個人" id="Individual" {{ old('name_type') == '個人' || empty(old('name_type')) ? 'checked' : '' }}> 個人<br>
+        <input type="radio" name="name_type" value="法人" id="Corporate" {{ old('name_type') == '法人' ? 'checked' : '' }}> 法人<br>
     </div>
 
-    <div id="individual_div">
+    <div id="individual_div" {{ old('name_type') == '法人' ? 'hidden' : '' }}>
         @if($errors->has('name'))
         <div class="error">{{ $errors->first('name') }}</div>
         @endif
@@ -155,19 +155,31 @@
         </div>
     </div>
 
-    <div id="corporate_div" hidden>
+    <div id="corporate_div" {{ old('name_type') == '個人' || empty(old('name_type')) ? 'hidden' : '' }}>
+        @if($errors->has('name_cp'))
+        <div class="error">{{ $errors->first('name_cp') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">法人名<span class="require_mark">※</span></div>
             {{ Form::text('name_cp', old('name_cp'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）株式会社ファラデー']) }}
         </div>
+        @if($errors->has('name_kana_cp'))
+        <div class="error">{{ $errors->first('name_kana_cp') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">法人名（カナ）<span class="require_mark">※</span></div>
             {{ Form::text('name_kana_cp', old('name_kana_cp'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）カブシキガイシャファラデー']) }}
         </div>
+        @if($errors->has('charge_depart'))
+        <div class="error">{{ $errors->first('charge_depart') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">ご担当者様部署<span class="require_mark">※</span></div>
             {{ Form::text('charge_depart', old('charge_depart'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
         </div>
+        @if($errors->has('charge_name'))
+        <div class="error">{{ $errors->first('charge_name') }}</div>
+        @endif
         <div class="form_column">
             <div class="form_name">ご担当者様名<span class="require_mark">※</span></div>
             {{ Form::text('charge_name', old('charge_name'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
@@ -189,7 +201,7 @@
             {{ Form::text('tel3', old('tel3'), ['class' => 'tel_text', 'maxlength' => 5, 'placeholder' => '']) }}
         </div>
     </div>
-    @if($errors->has('name_kana'))
+    @if($errors->has('mail'))
     <div class="error">{{ $errors->first('mail') }}</div>
     @endif
     <div class="form_column">
@@ -199,39 +211,60 @@
 
     <div class="content_name">ご連絡先情報</div>
     <div class="contact_check_div">
-        <input type="checkbox" name="contact_diff" value="1">
+        <input type="checkbox" name="contact_diff" value="1" {{ old('contact_diff') ? 'checked' : '' }}>
         <span class="contact_diff_span">ご連絡先</span>とご契約者様が<span class="contact_diff_span">異なる</span>場合チェックを入れてください。
         <div id="contact_diff_div">
+            @if($errors->has('zip_diff'))
+            <div class="error">{{ $errors->first('zip_diff') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">郵便番号<span class="require_mark">※</span></div>
                 <div style="width: 480px;">
-                {{ Form::text('zip_diff', old('zip_diff'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
-                    'onkeyup' => "AjaxZip3.zip2addr(this,'','pref_name2','city_name2','town_name2','add_name2')"]) }}
-                <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
-                <div class="supplement">ハイフンなしで入力してください。</div>
-
+                    {{ Form::text('zip_diff', old('zip_diff'), ['class' => 'zip_input', 'maxlength' => 10, 'placeholder' => '',
+                        'onkeyup' => "AjaxZip3.zip2addr(this,'','pref_name2','city_name2','town_name2','add_name2')"]) }}
+                    <img src="{{ asset('img/address_btn.png') }}" style="margin-left:20px;">
+                    <div class="supplement">ハイフンなしで入力してください。</div>
                 </div>
             </div>
+            @if($errors->has('pref_name2'))
+            <div class="error">{{ $errors->first('pref_name2') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">都道府県<span class="require_mark">※</span></div>
                 {{ Form::text('pref_name2', old('pref_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
             </div>
+            @if($errors->has('city_name2'))
+            <div class="error">{{ $errors->first('city_name2') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">市区郡名<span class="require_mark">※</span></div>
                 {{ Form::text('city_name2', old('city_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
             </div>
+            @if($errors->has('town_name2'))
+            <div class="error">{{ $errors->first('town_name2') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">町名<span class="require_mark">※</span></div>
                 {{ Form::text('town_name2', old('town_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
             </div>
+            @if($errors->has('add_name2'))
+            <div class="error">{{ $errors->first('add_name2') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">丁目・番地<span class="require_mark">※</span></div>
                 {{ Form::text('add_name2', old('add_name2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '']) }}
             </div>
             <div class="form_column">
-                <div class="form_name">建物名など<span class="require_mark">※</span></div>
-                {{ Form::text('building', old('building'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
+                <div class="form_name">建物名など</div>
+                {{ Form::text('building2', old('building2'), ['class' => 'form_text', 'maxlength' => 30, 'placeholder' => '例）電気ハイム　１０１号室']) }}
             </div>
+            @if($errors->has('tel1_diff'))
+            <div class="error">{{ $errors->first('tel1_diff') }}</div>
+            @elseif($errors->has('tel2_diff'))
+            <div class="error">{{ $errors->first('tel2_diff') }}</div>
+            @elseif($errors->has('tel3_diff'))
+            <div class="error">{{ $errors->first('tel3_diff') }}</div>
+            @endif
             <div class="form_column">
                 <div class="form_name">電話番号<span class="require_mark">※</span></div>
                 <div class="tel_column">
@@ -250,10 +283,13 @@
     </div>
 
     <div class="content_name">お支払方法選択</div>
+    @if($errors->has('pay_type'))
+    <div class="error">{{ $errors->first('pay_type') }}</div>
+    @endif
     <div class="content_radio">
-        <input type="radio" name="pay_type" value="クレジットカード"> クレジットカード<br>
-        <input type="radio" name="pay_type" value="口座振替"> 口座振替<br>
-        <input type="radio" name="pay_type" value="コンビニ決済（払込票）"> コンビニ決済（払込票）<br>
+        <input type="radio" name="pay_type" value="クレジットカード" {{ old('pay_type') == 'クレジットカード' ? 'checked' : '' }}> クレジットカード<br>
+        <input type="radio" name="pay_type" value="口座振替" {{ old('pay_type') == '口座振替' ? 'checked' : '' }}> 口座振替<br>
+        <input type="radio" name="pay_type" value="コンビニ決済（払込票）" {{ old('pay_type') == 'コンビニ決済（払込票）' ? 'checked' : '' }}> コンビニ決済（払込票）<br>
         <div class="pay_page_btn">GMO決済ページへ移動</div>
         <div class="supplement" style="width: 350px;">※当社サービスの決済はGMOペイメントを使用しています。</div>
     </div>
